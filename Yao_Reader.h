@@ -24,6 +24,7 @@
 #define  PANEL_sSerialNr                  9       /* control type: string, callback function: (none) */
 #define  PANEL_sAsicID                    10      /* control type: string, callback function: (none) */
 #define  PANEL_iAskID                     11      /* control type: command, callback function: (none) */
+#define  PANEL_TEXTMSG                    12      /* control type: textMsg, callback function: (none) */
 
 
      /* Control Arrays: */

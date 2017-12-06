@@ -1,0 +1,20 @@
+[main]
+Class="Function"
+Prototype="int main(int argc, char **argv);"
+
+[panelCB]
+Class="Function"
+Prototype="int panelCB(int panel, int event, void *callbackData, int eventData1, int eventData2);"
+
+[QuitCallback]
+Class="Function"
+Prototype="int QuitCallback(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[OnCloseComPortPressed]
+Class="Function"
+Prototype="int OnCloseComPortPressed(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
+[OnOpenComPortPressed]
+Class="Function"
+Prototype="int OnOpenComPortPressed(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+
