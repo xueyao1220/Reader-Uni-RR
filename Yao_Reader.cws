@@ -48,7 +48,7 @@ Batch Build Debug = False
 [File 0001]
 Path = "/c/Users/yxue/Documents/Reader-Uni-RR/Yao_Reader.uir"
 File Type = "User Interface Resource"
-Disk Date = 3595403912
+Disk Date = 3595404028
 In Projects = "1,"
 Window Top = 62
 Window Left = 26
@@ -63,7 +63,7 @@ Disk Date = 3595400316
 In Projects = "1,"
 Window Top = 32
 Window Left = 10
-Window Z-Order = 2
+Window Z-Order = 3
 Source Window State = "1,0,0,0,0,0,0,0,0,80,0,0,0,0,0,25,0,0,46,32,349,683,1,0,"
 
 [File 0003]
@@ -75,7 +75,7 @@ Window Top = 92
 Window Left = 42
 Window Height = 349
 Window Width = 683
-Window Z-Order = 3
+Window Z-Order = 2
 
 [Tab Order]
 Tab 0001 = "/c/Users/yxue/Documents/Reader-Uni-RR/Yao_Reader.c"
