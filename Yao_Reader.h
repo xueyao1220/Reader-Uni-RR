@@ -23,7 +23,7 @@
 #define  PANEL_DECORATION_2               8       /* control type: deco, callback function: (none) */
 #define  PANEL_sSerialNr                  9       /* control type: string, callback function: (none) */
 #define  PANEL_sAsicID                    10      /* control type: string, callback function: (none) */
-#define  PANEL_COMMANDBUTTON              11      /* control type: command, callback function: (none) */
+#define  PANEL_iAskID                     11      /* control type: command, callback function: (none) */
 
 
      /* Control Arrays: */

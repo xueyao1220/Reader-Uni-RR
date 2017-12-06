@@ -61,10 +61,57 @@ Error:
 // UI callback function prototypes
 
 /// HIFN Exit when the user dismisses the panel.
+
 int CVICALLBACK panelCB (int panel, int event, void *callbackData,
-		int eventData1, int eventData2)
+						 int eventData1, int eventData2)
 {
-	if (event == EVENT_CLOSE)
-		QuitUserInterface (0);
+	switch (event)
+	{
+		case EVENT_GOT_FOCUS:
+
+			break;
+		case EVENT_LOST_FOCUS:
+
+			break;
+		case EVENT_CLOSE:
+
+			break;
+	}
+	return 0;
+}
+
+int CVICALLBACK QuitCallback (int panel, int control, int event,
+							  void *callbackData, int eventData1, int eventData2)
+{
+	switch (event)
+	{
+		case EVENT_COMMIT:
+
+			break;
+	}
+	return 0;
+}
+
+int CVICALLBACK OnCloseComPortPressed (int panel, int control, int event,
+									   void *callbackData, int eventData1, int eventData2)
+{
+	switch (event)
+	{
+		case EVENT_COMMIT:
+
+			break;
+	}
+	return 0;
+}
+
+int CVICALLBACK OnOpenComPortPressed (int panel, int control, int event,
+									  void *callbackData, int eventData1, int eventData2)
+{
+	switch (event)
+	{
+		case EVENT_COMMIT:
+
+			break;
+	}
 	return 0;
 }
