@@ -11,7 +11,18 @@
 //==============================================================================
 // Include files
 
-//#include "Ablauf.h"
+#include <utility.h>
+
+#include <userint.h>
+#include <ansi_c.h>
+#include <rs232.h>
+
+
+#include "Ablauf.h"
+#include "feotypes.h"   
+#include "fv900x.h"
+#include "DebugPrintf.h"
+
 
 //==============================================================================
 // Constants
@@ -39,18 +50,18 @@ static struct
    bool     bTestsStarted;       //Flag for the Tests
    char     szArtNr[64];          //ArtNrString
    sregt    srRetVal;            //RetVal for
-   char     szPopupTxt[ABL_POPUPSTRINGLENGTH]; //Textbuffer for the User Message
+ //  char     szPopupTxt[ABL_POPUPSTRINGLENGTH]; //Textbuffer for the User Message
    bool     bCancel;             //TRUE if the User aborts the Tests
    uint32   ulAsicId;            //Asic Id of the currently read ASIC
    uint32   ulSerialNr;          //Serial Number Id of the currently read ASIC
    uint32   ulSdCardGenCounter;  //how many sdcards where generated - needed in Test6 and stored again in Test7
    FILE     *pfCaldatFile;       //File pointer to caldat file
    int16    iEEPromBuf[32];      //image of the TAG-EEPROM
-   char     szCaldat[CALDAT_SIZE_IN_BYTES];       //image of the caldat data on the SD-card
+ //  char     szCaldat[CALDAT_SIZE_IN_BYTES];       //image of the caldat data on the SD-card
    uint32   ulSdCaldatAsicId;    //Asic Id stored on the SD-Card
    uint8    u8SingleTest7Running;   //Is The test 7 running
    bool     bDummyPrintSucceeded;   //has a dummy label been printed successfully
-   tPLUTT2Table sPLUTT2TableRdFromCaldat;
+  // tPLUTT2Table sPLUTT2TableRdFromCaldat;
 }sAblS;
 
 //==============================================================================
@@ -62,9 +73,7 @@ static struct
 //==============================================================================
 // Global functions
 
-/// HIFN  What does your function do?
-/// HIPAR x/What inputs does your function expect?
-/// HIRET What does your function return?
+
 bool Abl_bCancelFlag(void)
 {
    bool bRetVal;

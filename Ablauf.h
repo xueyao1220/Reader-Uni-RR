@@ -20,7 +20,7 @@
 
 #include "cvidef.h"
 		
-#include "feotypes.h"
+
 
 //==============================================================================
 // Constants
@@ -35,7 +35,7 @@
 // Global functions
 
 int Declare_Your_Functions_Here (int x);
-bool Abl_bCancelFlag(void);   
+  
 
 #ifdef __cplusplus
     }

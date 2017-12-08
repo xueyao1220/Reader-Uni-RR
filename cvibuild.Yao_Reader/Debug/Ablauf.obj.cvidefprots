@@ -1,0 +1,4 @@
+[Abl_bCancelFlag]
+Class="Function"
+Prototype="unsigned char Abl_bCancelFlag();"
+
