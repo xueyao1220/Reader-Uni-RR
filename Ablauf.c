@@ -22,6 +22,7 @@
 #include "feotypes.h"   
 #include "fv900x.h"
 #include "DebugPrintf.h"
+#include "retvalnew.h"   
 
 
 //==============================================================================
@@ -74,14 +75,86 @@ static struct
 // Global functions
 
 
-bool Abl_bCancelFlag(void)
+
+
+
+static sregt Abl_srGetAsicIdFromTag(void)
 {
-   bool bRetVal;
-   CmtGetLock(sAblS.iAblLock);       //be sure that only this function got the right to act on this value
-   bRetVal = sAblS.bCancel;
-   CmtReleaseLock(sAblS.iAblLock);
-   return bRetVal;
+   sregt srRetVal = OK;
+   uint16 uiCntPackets =0;
+   char szRecAnswer[ABL_DEFSTRINGLENGTH];
+   char szPopupStr[ABL_DEFSTRINGLENGTH];
+   int16 iEEPromBuf[32];
+   uint16 uiRetry = 0;
+   
+   // send read Raw Tag
+   Fv900x_srSendMessageByTableIdx(DEVMSG_READRAWTAG, NULL, 0);
+   // receive first msg.
+   while((srRetVal = Fv900x_srReceiveMsg(szRecAnswer, NULL)) != OK)
+   {
+      Fv900x_srSendMessageByTableIdx(DEVMSG_READRAWTAG, NULL, 0);
+      uiRetry++;
+      
+      if(uiRetry >= 3)
+         //CHKERRRET(srRetVal , MSG_ERR_ANSW_RAWTAG);
+		 break;
+   }//while
+   
+   memset(iEEPromBuf, -1, 32*2);
+   for(uiRetry = 0; uiRetry < 3; uiRetry++)
+   {
+      // while retval == OK
+      while(sAblS.srRetVal == OK)
+      {
+         // add recMsg to AnserStr
+         if(szRecAnswer[0] >= 0x20)
+            iEEPromBuf[szRecAnswer[0] - 0x20] = (uchar)szRecAnswer[1];
+         
+         // get Msgs   
+         Fv900x_srReceiveMsg(szRecAnswer, NULL);
+         uiCntPackets++;
+         if(szRecAnswer[0] == 2)
+            break;
+      }
+   
+      // Parse ASIC-ID from EEPROM Image
+      // Attention. Bytes are in correct order.
+      if((iEEPromBuf[8 ]>=0) &&
+         (iEEPromBuf[9 ]>=0) &&
+         (iEEPromBuf[10]>=0) &&
+         (iEEPromBuf[11]>=0))
+      {
+         sAblS.ulAsicId =  ((uchar)iEEPromBuf[8 ])<<24 | 
+                           ((uchar)iEEPromBuf[9 ])<<16 |
+                           ((uchar)iEEPromBuf[10])<<8 |
+                           ((uchar)iEEPromBuf[11]) ;
+         //AssicId received
+         //break for
+         break;
+      }
+      else
+      {
+         if(uiRetry == 2)
+         {
+            break;
+         }
+         else
+         {
+            uiCntPackets = 0;
+            Fv900x_srSendMessageByTableIdx(DEVMSG_READRAWTAG, NULL, 0);
+         }
+      }
+   }//for
+   sprintf(szPopupStr, "Fehler beim Ermitteln der Seriennummer\nEvtl. existiert keine gültige, oder zu viele Caldat-Dateien!\nAsic-ID: 0x%08X",sAblS.ulAsicId );
+   //CHKERRRET(Abl_srGetSerNr(), szPopupStr);
+   
+  // if(iEEProm)
+   //   memcpy (iEEProm, iEEPromBuf, 32*2);
+   
+   
+   return  sAblS.ulAsicId;
 }
+
 
 
 

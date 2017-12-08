@@ -41,7 +41,7 @@
 #define DEVICE_CP_DATABITS   8   
 #define DEVICE_CP_STOPBITS   1   
 #define DEVICE_CP_QUEUESIZE  512
-#define DEVICE_CP_DEFAULTPORTNUMBER 1
+#define DEVICE_CP_DEFAULTPORTNUMBER 7
 
 #define DEVICECOM_RETRIES        3
 #define DEVICECOM_PORTTIMEOUT    0.01f //Timeout is specified with 1 minute, just for debugging set to 1.0f
@@ -210,8 +210,7 @@ sregt Fv900x_srReceiveMsg(char * pcRecAnswer, uint8 * pu8ContentLength)
    while(u8Retries < DEVICECOM_RETRIES)
    {
       memset(acRec, 0, sizeof(acRec));
-      if(Abl_bCancelFlag())
-         return E_CANCEL;
+      
       SetBreakOnLibraryErrors(0);      //CVIdebugging should not stop, just becaus the comm timed out.
       if((acRec[DEVMSG_BYTESPOS_PROTID] = ComRdByte(sFv900xS.iPortNumber)) >= 0)    //receive first char, should be 'S' or 'R'
       {
@@ -220,20 +219,18 @@ sregt Fv900x_srReceiveMsg(char * pcRecAnswer, uint8 * pu8ContentLength)
          {
             case FV900X_ID_NRM:
             {
-               if(Abl_bCancelFlag())
-                  return E_CANCEL;
+               
                if((acRec[DEVMSG_BYTESPOS_LENGTH] = ComRdByte(sFv900xS.iPortNumber)) >= 0)    //receive second char, this is the Length of the content
                {
                   if(acRec[DEVMSG_BYTESPOS_LENGTH] > 62)
                      return ERR;
                   if((u8ReceivedContent = ComRd(sFv900xS.iPortNumber, &acRec[DEVMSG_BYTESPOS_CONTENT], acRec[DEVMSG_BYTESPOS_LENGTH]+2)) == acRec[1]+2)    //read as much bytes from com-port as the length of the content is + CRC
                   {
-                     dbg1((logfp, "Answer received:\r\n"));
-                     for(iIdx = 0; iIdx < u8ReceivedContent+2; iIdx ++ )
-                        dbg1((logfp, " %02X\r\n", (uchar)acRec[iIdx]));
+                   //  dbg1((logfp, "Answer received:\r\n"));
+                   //  for(iIdx = 0; iIdx < u8ReceivedContent+2; iIdx ++ )
+                    //    dbg1((logfp, " %02X\r\n", (uchar)acRec[iIdx]));
                         
-                     if(Abl_bCancelFlag())
-                        return E_CANCEL;
+                     
                      //look if the received answer was the expected one
                      if(acRec[DEVMSG_BYTESPOS_CONTENT] == sFv900xS.tActRequest.tRequest.cExpectedAnswer)
                      {
@@ -251,8 +248,7 @@ sregt Fv900x_srReceiveMsg(char * pcRecAnswer, uint8 * pu8ContentLength)
                         if(pu8ContentLength)   
                            *pu8ContentLength = acRec[DEVMSG_BYTESPOS_LENGTH];
                            
-                        if(Abl_bCancelFlag())
-                           return E_CANCEL;
+                     
 
                         return OK;
                      }
@@ -270,8 +266,7 @@ sregt Fv900x_srReceiveMsg(char * pcRecAnswer, uint8 * pu8ContentLength)
             }
             case FV900X_ID_STATUS:
             {
-               if(Abl_bCancelFlag())
-                  return E_CANCEL;
+               
                if((acRec[DEVMSG_BYTESPOS_LENGTH] = ComRdByte(sFv900xS.iPortNumber)) >= 0)    //receive second char, this is the Length of the content
                {
                   //empty the queue
@@ -431,11 +426,7 @@ sregt Fv900x_srSendMessageByTableIdx(uint16 uiMsgTableIdx, char * pcContent, uin
 
             if(u8BytesSend == uiBytesToSend)
             {
-               if(Abl_bCancelFlag())
-               {
-                  free(pcStart);
-                  return E_CANCEL;  
-               }
+             
                //store the Message for verifying the received Message
                sFv900xS.tActRequest.tRequest = taSendMessages[uiMsgTableIdx];
             
@@ -520,8 +511,7 @@ sregt Fv900x_srSendMessageByTableIdx(uint16 uiMsgTableIdx, char * pcContent, uin
       //store the Message for verifying the received Message
       sFv900xS.tActRequest.tRequest = taSendMessages[uiMsgTableIdx];
    
-      if(Abl_bCancelFlag())
-         return E_CANCEL;
+    
 
       while(u8RetryCnt < DEVICECOM_RETRIES)
       {
@@ -532,7 +522,7 @@ sregt Fv900x_srSendMessageByTableIdx(uint16 uiMsgTableIdx, char * pcContent, uin
          while(u8Counter)
          {
             u8BytesSend += ComWrtByte (sFv900xS.iPortNumber, *pcDataToSend);
-            dbg1((logfp, "Byte sent: %02X\r\n", (uchar)*pcDataToSend));
+           // dbg1((logfp, "Byte sent: %02X\r\n", (uchar)*pcDataToSend));
             
             pcDataToSend++;
             u8Counter--;

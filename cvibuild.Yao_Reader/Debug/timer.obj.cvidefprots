@@ -1,0 +1,8 @@
+[Tmr_vInit]
+Class="Function"
+Prototype="void Tmr_vInit();"
+
+[Tmr_vDelay]
+Class="Function"
+Prototype="void Tmr_vDelay(double tTicks);"
+

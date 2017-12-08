@@ -1,3 +1,7 @@
+Ablauf.obj
+fv900x.obj
+main.obj
+timer.obj
 Yao_Reader.obj
 cvi.lib
 cvistart.lib

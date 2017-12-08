@@ -18,3 +18,7 @@ Prototype="int OnCloseComPortPressed(int panel, int control, int event, void *ca
 Class="Function"
 Prototype="int OnOpenComPortPressed(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
 
+[AskIDPressed]
+Class="Function"
+Prototype="int AskIDPressed(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+

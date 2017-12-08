@@ -11,12 +11,16 @@
 //==============================================================================
 // Include files
 
+#include <formatio.h>
 #include <rs232.h>
 #include <ansi_c.h>
 #include <cvirte.h>		
 #include <userint.h>
+
 #include "Yao_Reader.h"
 #include "toolbox.h"
+#include "fv900x.h" 
+#include "Ablauf.h"  
 
 //==============================================================================
 // Constants
@@ -142,34 +146,42 @@ int CVICALLBACK OnCloseComPortPressed (int panel, int control, int event,
 int CVICALLBACK OnOpenComPortPressed (int panel, int control, int event,
 									  void *callbackData, int eventData1, int eventData2)
 {
-	int iSelectedComPort =0;
-	int iComPortOpenError = 0;
+
 	
 	switch (event)
 	{
 		case EVENT_COMMIT:
 			
-			GetCtrlVal (PANEL, PANEL_iLBComPortList, &iSelectedComPort);
-		
 			
-			if(iComPortOpenError>=0)
-			{
-				//success
-				SetCtrlVal(PANEL,PANEL_sTBComPortStatus,"Com Port opened\r\n");
-				iOpenComPortStatus =1;
-				SetCtrlAttribute(PANEL,PANEL_iBComPortOpen,ATTR_DIMMED,1);
-				SetCtrlAttribute(laPANEL,PANEL_iBcomPortClose,ATTR_DIMMED,0);  
-				iOpenedComPort= iSelectedComPort;
-			}
-			else
-			{
-				//com port open fail
-				SetCtrlVal(PANEL,PANEL_sTBComPortStatus,"Fail to open Com Port\r\n");
-				SetCtrlVal(PANEL,PANEL_sTBComPortStatus,GetRS232ErrorString(iComPortOpenError));
-			}
+			Fv900x_srInitCom();
+			
+			
 
 			break;
 	}
 	return 0;
 }
 
+int CVICALLBACK AskIDPressed (int panel, int control, int event,
+							  void *callbackData, int eventData1, int eventData2)
+{	 
+	char szSwVersNr[ABL_DEFSTRINGLENGTH]; 
+	char szRecSerNr[FV900X_MSG_LENGTH];          //Serial number read from device
+	char szSerNr[ABL_DEFSTRINGLENGTH];  
+	uint32   ulAsic;
+	char szAsicID[8];
+	
+	switch (event)
+	{
+		case EVENT_COMMIT:
+			
+			ulAsic =Abl_srGetAsicIdFromTag();
+			
+			Fmt(szAsicID,"%x",ulAsic);		//Format Integer AsicID to Hex
+			
+			SetCtrlVal(PANEL,PANEL_sAsicID,szAsicID); 
+
+			break;
+	}
+	return 0;
+}

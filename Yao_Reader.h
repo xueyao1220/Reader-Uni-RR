@@ -23,7 +23,7 @@
 #define  PANEL_DECORATION_2               8       /* control type: deco, callback function: (none) */
 #define  PANEL_sSerialNr                  9       /* control type: string, callback function: (none) */
 #define  PANEL_sAsicID                    10      /* control type: string, callback function: (none) */
-#define  PANEL_iAskID                     11      /* control type: command, callback function: (none) */
+#define  PANEL_iAskID                     11      /* control type: command, callback function: AskIDPressed */
 #define  PANEL_TEXTMSG                    12      /* control type: textMsg, callback function: (none) */
 
 
@@ -39,6 +39,7 @@
 
      /* Callback Prototypes: */
 
+int  CVICALLBACK AskIDPressed(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK OnCloseComPortPressed(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK OnOpenComPortPressed(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK panelCB(int panel, int event, void *callbackData, int eventData1, int eventData2);

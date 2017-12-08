@@ -18,7 +18,7 @@
 //==============================================================================
 // Include files
 
-#include "cvidef.h"
+//#include "cvidef.h"
 #include "feotypes.h"  
 		
 
