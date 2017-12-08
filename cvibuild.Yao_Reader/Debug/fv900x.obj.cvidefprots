@@ -1,0 +1,36 @@
+[urAscii2Hex]
+Class="Function"
+Prototype="int urAscii2Hex(char ucAscii);"
+
+[crc_byte16]
+Class="Function"
+Prototype="unsigned short crc_byte16(unsigned char *data, unsigned int bytecnt);"
+
+[Fv900x_srReceiveMsg]
+Class="Function"
+Prototype="long Fv900x_srReceiveMsg(char *pcRecAnswer, unsigned char *pu8ContentLength);"
+
+[Fv900x_srHandleTimeout]
+Class="Function"
+Prototype="long Fv900x_srHandleTimeout();"
+
+[Fv900x_srSendMessageByTableIdx]
+Class="Function"
+Prototype="long Fv900x_srSendMessageByTableIdx(unsigned short uiMsgTableIdx, char *pcContent, unsigned long ulContentLength);"
+
+[Fv900x_srInitCom]
+Class="Function"
+Prototype="long Fv900x_srInitCom();"
+
+[Fv900x_srUinitCom]
+Class="Function"
+Prototype="long Fv900x_srUinitCom();"
+
+[Fv900x_bDeviceConnected]
+Class="Function"
+Prototype="unsigned char Fv900x_bDeviceConnected();"
+
+[Fv900x_srInit]
+Class="Function"
+Prototype="long Fv900x_srInit();"
+

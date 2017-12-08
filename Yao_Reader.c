@@ -158,7 +158,7 @@ int CVICALLBACK OnOpenComPortPressed (int panel, int control, int event,
 				SetCtrlVal(PANEL,PANEL_sTBComPortStatus,"Com Port opened\r\n");
 				iOpenComPortStatus =1;
 				SetCtrlAttribute(PANEL,PANEL_iBComPortOpen,ATTR_DIMMED,1);
-				SetCtrlAttribute(PANEL,PANEL_iBcomPortClose,ATTR_DIMMED,0);  
+				SetCtrlAttribute(laPANEL,PANEL_iBcomPortClose,ATTR_DIMMED,0);  
 				iOpenedComPort= iSelectedComPort;
 			}
 			else

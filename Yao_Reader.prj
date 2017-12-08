@@ -9,7 +9,7 @@ IVI Standard Root Dir = "/C/Program Files (x86)/IVI Foundation/IVI"
 VXIplug&play Framework Dir = "/C/Program Files (x86)/IVI Foundation/VISA/winnt"
 IVI Standard Root 64-bit Dir = "/C/Program Files/IVI Foundation/IVI"
 VXIplug&play Framework 64-bit Dir = "/C/Program Files/IVI Foundation/VISA/win64"
-Number of Files = 3
+Number of Files = 15
 Target Type = "Executable"
 Flags = 16
 Copied From Locked InstrDrv Directory = False
@@ -44,6 +44,58 @@ File Type = "CSource"
 Res Id = 2
 Path Is Rel = True
 Path Rel To = "Project"
+Path Rel Path = "Ablauf.c"
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/Ablauf.c"
+Exclude = False
+Compile Into Object File = False
+Project Flags = 0
+Folder = "Source Files"
+Folder Id = 1
+
+[File 0003]
+File Type = "CSource"
+Res Id = 3
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "fv900x.c"
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/fv900x.c"
+Exclude = False
+Compile Into Object File = False
+Project Flags = 0
+Folder = "Source Files"
+Folder Id = 1
+
+[File 0004]
+File Type = "CSource"
+Res Id = 4
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "main.c"
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/main.c"
+Exclude = False
+Compile Into Object File = False
+Project Flags = 0
+Folder = "Source Files"
+Folder Id = 1
+
+[File 0005]
+File Type = "CSource"
+Res Id = 5
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "timer.c"
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/timer.c"
+Exclude = False
+Compile Into Object File = False
+Project Flags = 0
+Folder = "Source Files"
+Folder Id = 1
+
+[File 0006]
+File Type = "CSource"
+Res Id = 6
+Path Is Rel = True
+Path Rel To = "Project"
 Path Rel Path = "Yao_Reader.c"
 Path = "/c/Users/yxue/Documents/Reader-Uni-RR/Yao_Reader.c"
 Exclude = False
@@ -52,9 +104,105 @@ Project Flags = 0
 Folder = "Source Files"
 Folder Id = 1
 
-[File 0003]
+[File 0007]
 File Type = "Include"
-Res Id = 3
+Res Id = 7
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "Ablauf.h"
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/Ablauf.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+Folder Id = 2
+
+[File 0008]
+File Type = "Include"
+Res Id = 8
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "DebugPrintf.h"
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/DebugPrintf.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+Folder Id = 2
+
+[File 0009]
+File Type = "Include"
+Res Id = 9
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "feotypes.h"
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/feotypes.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+Folder Id = 2
+
+[File 0010]
+File Type = "Include"
+Res Id = 10
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "fv900x.h"
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/fv900x.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+Folder Id = 2
+
+[File 0011]
+File Type = "Include"
+Res Id = 11
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "Include File.h"
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/Include File.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+Folder Id = 2
+
+[File 0012]
+File Type = "Include"
+Res Id = 12
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "main.h"
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/main.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+Folder Id = 2
+
+[File 0013]
+File Type = "Include"
+Res Id = 13
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "retvalnew.h"
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/retvalnew.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+Folder Id = 2
+
+[File 0014]
+File Type = "Include"
+Res Id = 14
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "timer.h"
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/timer.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+Folder Id = 2
+
+[File 0015]
+File Type = "Include"
+Res Id = 15
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "Yao_Reader.h"
