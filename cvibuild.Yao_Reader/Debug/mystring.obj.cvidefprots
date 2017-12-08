@@ -1,0 +1,12 @@
+[stpcpy]
+Class="Function"
+Prototype="char *stpcpy(char *dest, const char *src);"
+
+[strncpynul]
+Class="Function"
+Prototype="char *strncpynul(char *dest, const char *src, int num);"
+
+[strncpynulset]
+Class="Function"
+Prototype="void strncpynulset(char *dest, const char *src, int num);"
+

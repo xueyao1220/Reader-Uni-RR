@@ -156,5 +156,39 @@ static sregt Abl_srGetAsicIdFromTag(void)
 }
 
 
+static sregt Abl_srGetSerNr(void)
+{
+   HANDLE hSearchHandle;
+   WIN32_FIND_DATA sFind, sDummyFind;
+   char szCaldatFilePath[ABL_DEFSTRINGLENGTH];
+   char szAllgArtNr[64];
+   char szCaldatName[64];
+   char *pcSerNr;
+
+   // Search Caldat-file on server (find first)
+   Ini_iGetString(sIniE.szIniFilePath, INI_SEC_FOLDERS, INI_KEY_CALDATFOLDER, ABL_DEFSTRINGLENGTH, szCaldatFilePath);
+   //Build Complete path with filename
+//   sprintf(szCaldatFilePath,"%s%s_0x%08x_??????????_PASS.CAL", szCaldatFilePath, sAblS.szArtNr, sAblS.ulAsicId);
+   Ini_iGetString(sIniE.szIniFilePath, INI_SEC_FOLDERS, INI_KEY_ARTNUMCALDAT, ABL_DEFSTRINGLENGTH, szCaldatName);
+   strcpy(szAllgArtNr, szCaldatName);
+   szAllgArtNr[strlen(szAllgArtNr)-1] = 'X';
+   sprintf(szCaldatFilePath,"%s%s_0x%08x_??????????_PASS.CAL", szCaldatFilePath, szAllgArtNr, sAblS.ulAsicId);
+   // wenn fehler
+   if((hSearchHandle = FindFirstFile(szCaldatFilePath, &sFind)) == INVALID_HANDLE_VALUE)
+      return E_FILE_NOTEXISTS;
+   
+   // wenn findnext == was gefunden
+   if(FindNextFile(hSearchHandle, &sDummyFind))
+      return E_SECONDCALDATEXISTS;   
+   
+   // ausparsen der seriennummer aus dem filenamen.
+   pcSerNr = strchr(sFind.cFileName, '_');  //search filename from the back (rear)
+   pcSerNr++;
+   pcSerNr = strchr(pcSerNr , '_');  //search filename from the back (rear)
+   pcSerNr++;  //set pointer to the number
+   sAblS.ulSerialNr = (uint32)strtoul(pcSerNr, NULL, 10);
+   return sAblS.ulSerialNr;
+}
+
 
 
