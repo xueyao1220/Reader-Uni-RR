@@ -45,6 +45,7 @@
 
 
 sregt Abl_srGetAsicIdFromTag(void);   
+sregt Abl_srGetSerNr(void);   
 
 #ifdef __cplusplus
     }

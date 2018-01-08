@@ -170,11 +170,13 @@ int CVICALLBACK AskIDPressed (int panel, int control, int event,
 	char szSerNr[ABL_DEFSTRINGLENGTH];  
 	uint32   ulAsic;
 	char szAsicID[8];
+	char szSerialNr[8];
 	
 	switch (event)
 	{
 		case EVENT_COMMIT:
 			
+		 	
 			ulAsic =Abl_srGetAsicIdFromTag();
 			
 			Fmt(szAsicID,"%x",ulAsic);		//Format Integer AsicID to Hex
@@ -185,3 +187,5 @@ int CVICALLBACK AskIDPressed (int panel, int control, int event,
 	}
 	return 0;
 }
+
+

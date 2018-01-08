@@ -15,7 +15,9 @@
 -stackcommit:4096
 -in:c:\Users\yxue\Documents\Reader-Uni-RR\cvibuild.Yao_Reader\Debug\Ablauf.obj
 -in:c:\Users\yxue\Documents\Reader-Uni-RR\cvibuild.Yao_Reader\Debug\fv900x.obj
+-in:c:\Users\yxue\Documents\Reader-Uni-RR\cvibuild.Yao_Reader\Debug\ini.obj
 -in:c:\Users\yxue\Documents\Reader-Uni-RR\cvibuild.Yao_Reader\Debug\main.obj
+-in:c:\Users\yxue\Documents\Reader-Uni-RR\cvibuild.Yao_Reader\Debug\mystring.obj
 -in:c:\Users\yxue\Documents\Reader-Uni-RR\cvibuild.Yao_Reader\Debug\timer.obj
 -in:c:\Users\yxue\Documents\Reader-Uni-RR\cvibuild.Yao_Reader\Debug\Yao_Reader.obj
 -more:c:\program files (x86)\national instruments\cvi2017\bin\msvc\cvistart.lib

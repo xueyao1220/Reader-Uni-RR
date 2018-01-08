@@ -10,8 +10,9 @@
 
 //==============================================================================
 // Include files
-
+#include <windows.h>     
 #include <utility.h>
+
 
 #include <userint.h>
 #include <ansi_c.h>
@@ -23,6 +24,7 @@
 #include "fv900x.h"
 #include "DebugPrintf.h"
 #include "retvalnew.h"   
+#include "ini.h"
 
 
 //==============================================================================
@@ -78,7 +80,7 @@ static struct
 
 
 
-static sregt Abl_srGetAsicIdFromTag(void)
+sregt Abl_srGetAsicIdFromTag(void)
 {
    sregt srRetVal = OK;
    uint16 uiCntPackets =0;
@@ -145,18 +147,18 @@ static sregt Abl_srGetAsicIdFromTag(void)
          }
       }
    }//for
-   sprintf(szPopupStr, "Fehler beim Ermitteln der Seriennummer\nEvtl. existiert keine gültige, oder zu viele Caldat-Dateien!\nAsic-ID: 0x%08X",sAblS.ulAsicId );
+   sprintf(szPopupStr, "Fehler beim Ermitteln der Seriennummer\nEvtl. existiert keine gueltige, oder zu viele Caldat-Dateien!\nAsic-ID: 0x%08X",sAblS.ulAsicId );
    //CHKERRRET(Abl_srGetSerNr(), szPopupStr);
    
   // if(iEEProm)
    //   memcpy (iEEProm, iEEPromBuf, 32*2);
+   Abl_srGetSerNr();
    
-   
-   return  sAblS.ulAsicId;
+   return  sAblS.ulSerialNr;
 }
 
 
-static sregt Abl_srGetSerNr(void)
+sregt Abl_srGetSerNr(void)
 {
    HANDLE hSearchHandle;
    WIN32_FIND_DATA sFind, sDummyFind;
@@ -164,6 +166,7 @@ static sregt Abl_srGetSerNr(void)
    char szAllgArtNr[64];
    char szCaldatName[64];
    char *pcSerNr;
+
 
    // Search Caldat-file on server (find first)
    Ini_iGetString(sIniE.szIniFilePath, INI_SEC_FOLDERS, INI_KEY_CALDATFOLDER, ABL_DEFSTRINGLENGTH, szCaldatFilePath);

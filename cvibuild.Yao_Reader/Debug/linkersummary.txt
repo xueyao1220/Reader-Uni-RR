@@ -1,6 +1,8 @@
 Ablauf.obj
 fv900x.obj
+ini.obj
 main.obj
+mystring.obj
 timer.obj
 Yao_Reader.obj
 cvi.lib

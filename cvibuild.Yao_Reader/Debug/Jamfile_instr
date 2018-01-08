@@ -1,6 +1,8 @@
 Depends "c:\\Users\\yxue\\Documents\\Reader-Uni-RR\\cvibuild.Yao_Reader\\Debug\\Yao_Reader.exe" : "c:\\Users\\yxue\\Documents\\Reader-Uni-RR\\cvibuild.Yao_Reader\\Debug\\Ablauf.obj" ;
 Depends "c:\\Users\\yxue\\Documents\\Reader-Uni-RR\\cvibuild.Yao_Reader\\Debug\\Yao_Reader.exe" : "c:\\Users\\yxue\\Documents\\Reader-Uni-RR\\cvibuild.Yao_Reader\\Debug\\fv900x.obj" ;
+Depends "c:\\Users\\yxue\\Documents\\Reader-Uni-RR\\cvibuild.Yao_Reader\\Debug\\Yao_Reader.exe" : "c:\\Users\\yxue\\Documents\\Reader-Uni-RR\\cvibuild.Yao_Reader\\Debug\\ini.obj" ;
 Depends "c:\\Users\\yxue\\Documents\\Reader-Uni-RR\\cvibuild.Yao_Reader\\Debug\\Yao_Reader.exe" : "c:\\Users\\yxue\\Documents\\Reader-Uni-RR\\cvibuild.Yao_Reader\\Debug\\main.obj" ;
+Depends "c:\\Users\\yxue\\Documents\\Reader-Uni-RR\\cvibuild.Yao_Reader\\Debug\\Yao_Reader.exe" : "c:\\Users\\yxue\\Documents\\Reader-Uni-RR\\cvibuild.Yao_Reader\\Debug\\mystring.obj" ;
 Depends "c:\\Users\\yxue\\Documents\\Reader-Uni-RR\\cvibuild.Yao_Reader\\Debug\\Yao_Reader.exe" : "c:\\Users\\yxue\\Documents\\Reader-Uni-RR\\cvibuild.Yao_Reader\\Debug\\timer.obj" ;
 Depends "c:\\Users\\yxue\\Documents\\Reader-Uni-RR\\cvibuild.Yao_Reader\\Debug\\Yao_Reader.exe" : "c:\\Users\\yxue\\Documents\\Reader-Uni-RR\\cvibuild.Yao_Reader\\Debug\\Yao_Reader.obj" ;
 Depends "c:\\Users\\yxue\\Documents\\Reader-Uni-RR\\cvibuild.Yao_Reader\\Debug\\Yao_Reader.exe" : "C:\\Program Files (x86)\\Windows Kits\\8.1\\Lib\\winv6.3\\um\\x86\\advapi32.lib" ;
