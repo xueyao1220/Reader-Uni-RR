@@ -152,9 +152,11 @@ sregt Abl_srGetAsicIdFromTag(void)
    
   // if(iEEProm)
    //   memcpy (iEEProm, iEEPromBuf, 32*2);
-   Abl_srGetSerNr();
+  
    
-   return  sAblS.ulSerialNr;
+   return   sAblS.ulAsicId;
+   
+   
 }
 
 

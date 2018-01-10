@@ -1,5 +1,6 @@
 /**************************************************************************/
 /* LabWindows/CVI User Interface Resource (UIR) Include File              */
+/* Copyright (c) National Instruments 2018. All Rights Reserved.          */
 /*                                                                        */
 /* WARNING: Do not add to, delete from, or otherwise modify the contents  */
 /*          of this include file.                                         */
@@ -16,15 +17,14 @@
 #define  PANEL                            1       /* callback function: panelCB */
 #define  PANEL_QUITBUTTON                 2       /* control type: command, callback function: QuitCallback */
 #define  PANEL_DECORATION                 3       /* control type: deco, callback function: (none) */
-#define  PANEL_iLBComPortList             4       /* control type: listBox, callback function: (none) */
-#define  PANEL_iBcomPortClose             5       /* control type: command, callback function: OnCloseComPortPressed */
-#define  PANEL_iBComPortOpen              6       /* control type: command, callback function: OnOpenComPortPressed */
-#define  PANEL_sTBComPortStatus           7       /* control type: textBox, callback function: (none) */
-#define  PANEL_DECORATION_2               8       /* control type: deco, callback function: (none) */
-#define  PANEL_sSerialNr                  9       /* control type: string, callback function: (none) */
-#define  PANEL_sAsicID                    10      /* control type: string, callback function: (none) */
-#define  PANEL_iAskID                     11      /* control type: command, callback function: AskIDPressed */
-#define  PANEL_TEXTMSG                    12      /* control type: textMsg, callback function: (none) */
+#define  PANEL_iBcomPortClose             4       /* control type: command, callback function: OnCloseComPortPressed */
+#define  PANEL_iBComPortOpen              5       /* control type: command, callback function: OnOpenComPortPressed */
+#define  PANEL_sTBComPortStatus           6       /* control type: textBox, callback function: (none) */
+#define  PANEL_DECORATION_2               7       /* control type: deco, callback function: (none) */
+#define  PANEL_sSerialNr                  8       /* control type: string, callback function: (none) */
+#define  PANEL_sAsicID                    9       /* control type: string, callback function: (none) */
+#define  PANEL_iAskID                     10      /* control type: command, callback function: AskIDPressed */
+#define  PANEL_TEXTMSG                    11      /* control type: textMsg, callback function: (none) */
 
 
      /* Control Arrays: */

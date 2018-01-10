@@ -23,18 +23,40 @@
 //==============================================================================
 // Constants
 
+#define MAIN_MAXUSERS         100
+#define MAIN_USERNAMELENGTH   64
+#define MAIN_PSWDLENGTH       64
+#define MAIN_INIPATHLENGTH    128
+
+#define MAIN_MAXLOGINERRORS   3
+
+#define MAX_NUM_OFTHREADS     100
+
+#define MAIN_MAXARTICLENOLENGTH  32
+#define MAIN_MAXARTICLENO        100
+
+#define CALDAT_SIZE_IN_BYTES  16348
+
+#define HM30      1
+#define ABLAUF    1
+#define FV900X    1
 //==============================================================================
 // Types
 
 //==============================================================================
 // External variables
 		
-static int panelHandle = 0;    
+
+
+
+
 
 //==============================================================================
 // Global functions
 
 int Declare_Your_Functions_Here (int x);
+
+void Main_vInit(void);  
 
 #ifdef __cplusplus
     }

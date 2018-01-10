@@ -26,7 +26,7 @@
 
 #include "Ablauf.h"
 #include "main.h"
-//#include "ini.h"
+#include "ini.h"
 #include "fv900x.h"
 #include "feotypes.h"  
 
@@ -549,6 +549,8 @@ sregt Fv900x_srInitCom(void)
 {
    int iRetVal;
    uregt urRetry = 0;
+   
+    if(!Ini_iGetUint32(sIniE.szIniFilePath, INI_SEC_PORTS, INI_KEY_DEVICEPORT, &sFv900xS.iPortNumber))
   
    sFv900xS.iPortNumber = DEVICE_CP_DEFAULTPORTNUMBER;
       
@@ -578,7 +580,7 @@ sregt Fv900x_srUinitCom(void)
 {
    int iRetVal;
    uregt urRetry = 0;
-   //if(!Ini_iGetUint32(sIniE.szIniFilePath, INI_SEC_PORTS, INI_KEY_DEVICEPORT, &sFv900xS.iPortNumber))
+   if(!Ini_iGetUint32(sIniE.szIniFilePath, INI_SEC_PORTS, INI_KEY_DEVICEPORT, &sFv900xS.iPortNumber))
    sFv900xS.iPortNumber = DEVICE_CP_DEFAULTPORTNUMBER;
       
    while((iRetVal = CloseCom (sFv900xS.iPortNumber)) != 0)

@@ -21,6 +21,7 @@
 #include "toolbox.h"
 #include "fv900x.h" 
 #include "Ablauf.h"  
+#include "main.h" 
 
 //==============================================================================
 // Constants
@@ -115,28 +116,7 @@ int CVICALLBACK OnCloseComPortPressed (int panel, int control, int event,
 	{
 		case EVENT_COMMIT:
 			
-			if(iOpenComPortStatus==1)
-			{
-				
-				iCloseComPortError = CloseCom(iOpenedComPort);
-				 
-				
-				if(iCloseComPortError>=0)
-				{
-					//Com Port close success 
-					iOpenComPortStatus =0;
-					SetCtrlVal(PANEL,PANEL_sTBComPortStatus,"Com Port Closed\r\n");
-					SetCtrlAttribute(PANEL,PANEL_iBComPortOpen,ATTR_DIMMED,0);
-					SetCtrlAttribute(PANEL,PANEL_iBcomPortClose,ATTR_DIMMED,1); 
-					
-				}
-				else
-				{
-					//com Port close fail
-					SetCtrlVal(PANEL,PANEL_sTBComPortStatus,"Fail to close Com Port\r\n");
-					SetCtrlVal(PANEL,PANEL_sTBComPortStatus,GetRS232ErrorString(iCloseComPortError));   
-				}
-			}
+			
 
 			break;
 	}
@@ -151,6 +131,8 @@ int CVICALLBACK OnOpenComPortPressed (int panel, int control, int event,
 	switch (event)
 	{
 		case EVENT_COMMIT:
+			
+			Main_vInit(); 
 			
 			
 			Fv900x_srInitCom();
@@ -169,6 +151,7 @@ int CVICALLBACK AskIDPressed (int panel, int control, int event,
 	char szRecSerNr[FV900X_MSG_LENGTH];          //Serial number read from device
 	char szSerNr[ABL_DEFSTRINGLENGTH];  
 	uint32   ulAsic;
+	uint32 ulSerialNr;
 	char szAsicID[8];
 	char szSerialNr[8];
 	
@@ -179,9 +162,14 @@ int CVICALLBACK AskIDPressed (int panel, int control, int event,
 		 	
 			ulAsic =Abl_srGetAsicIdFromTag();
 			
+			ulSerialNr =Abl_srGetSerNr();
+			
 			Fmt(szAsicID,"%x",ulAsic);		//Format Integer AsicID to Hex
+			Fmt(szSerialNr,"%i",ulSerialNr);		//Format Integer AsicID to Hex     
 			
 			SetCtrlVal(PANEL,PANEL_sAsicID,szAsicID); 
+			
+			SetCtrlVal(PANEL,PANEL_sSerialNr,szSerialNr); 
 
 			break;
 	}
