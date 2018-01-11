@@ -24,8 +24,8 @@
 #include "fv900x.h"
 #include "DebugPrintf.h"
 #include "retvalnew.h"   
-#include "ini.h"
-
+#include "ini.h"	   
+#include "messages.h"
 
 //==============================================================================
 // Constants
@@ -53,7 +53,7 @@ static struct
    bool     bTestsStarted;       //Flag for the Tests
    char     szArtNr[64];          //ArtNrString
    sregt    srRetVal;            //RetVal for
- //  char     szPopupTxt[ABL_POPUPSTRINGLENGTH]; //Textbuffer for the User Message
+   char     szPopupTxt[ABL_POPUPSTRINGLENGTH]; //Textbuffer for the User Message
    bool     bCancel;             //TRUE if the User aborts the Tests
    uint32   ulAsicId;            //Asic Id of the currently read ASIC
    uint32   ulSerialNr;          //Serial Number Id of the currently read ASIC
@@ -75,6 +75,10 @@ static struct
 
 //==============================================================================
 // Global functions
+
+
+
+
 
 
 
@@ -111,7 +115,7 @@ sregt Abl_srGetAsicIdFromTag(void)
             iEEPromBuf[szRecAnswer[0] - 0x20] = (uchar)szRecAnswer[1];
          
          // get Msgs   
-         Fv900x_srReceiveMsg(szRecAnswer, NULL);
+         Fv900x_srReceiveMsg(szRecAnswer, NULL), MSG_ERR_ANSW_RAWTAG;
          uiCntPackets++;
          if(szRecAnswer[0] == 2)
             break;
@@ -136,7 +140,9 @@ sregt Abl_srGetAsicIdFromTag(void)
       {
          if(uiRetry == 2)
          {
-            break;
+            
+			  //CHKERRRET(E_READ_EEPROM, MSG_ERR_READING_RAWTAG);
+			  
          }
          else
          {
@@ -146,10 +152,11 @@ sregt Abl_srGetAsicIdFromTag(void)
       }
    }//for
    sprintf(szPopupStr, "Fehler beim Ermitteln der Seriennummer\nEvtl. existiert keine gueltige, oder zu viele Caldat-Dateien!\nAsic-ID: 0x%08X",sAblS.ulAsicId );
+   
    //CHKERRRET(Abl_srGetSerNr(), szPopupStr);
    
-  // if(iEEProm)
-   //   memcpy (iEEProm, iEEPromBuf, 32*2);
+   //if(iEEProm)
+   //  memcpy (iEEProm, iEEPromBuf, 32*2);
   
    
    return   sAblS.ulAsicId;

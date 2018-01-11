@@ -9,7 +9,7 @@ IVI Standard Root Dir = "/C/Program Files (x86)/IVI Foundation/IVI"
 VXIplug&play Framework Dir = "/C/Program Files (x86)/IVI Foundation/VISA/winnt"
 IVI Standard Root 64-bit Dir = "/C/Program Files/IVI Foundation/IVI"
 VXIplug&play Framework 64-bit Dir = "/C/Program Files/IVI Foundation/VISA/win64"
-Number of Files = 20
+Number of Files = 21
 Target Type = "Executable"
 Flags = 16
 Copied From Locked InstrDrv Directory = False
@@ -154,8 +154,19 @@ Project Flags = 0
 Folder = "Include Files"
 
 [File 0013]
-File Type = "CSource"
+File Type = "Include"
 Res Id = 13
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "messages.h"
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/messages.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0014]
+File Type = "CSource"
+Res Id = 14
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "mystring.c"
@@ -165,9 +176,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "source files"
 
-[File 0014]
+[File 0015]
 File Type = "Include"
-Res Id = 14
+Res Id = 15
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "mystring.h"
@@ -176,9 +187,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0015]
+[File 0016]
 File Type = "Include"
-Res Id = 15
+Res Id = 16
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "retvalnew.h"
@@ -187,9 +198,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0016]
+[File 0017]
 File Type = "CSource"
-Res Id = 16
+Res Id = 17
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "timer.c"
@@ -199,9 +210,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "source files"
 
-[File 0017]
+[File 0018]
 File Type = "Include"
-Res Id = 17
+Res Id = 18
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "timer.h"
@@ -210,9 +221,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0018]
+[File 0019]
 File Type = "CSource"
-Res Id = 18
+Res Id = 19
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "Yao_Reader.c"
@@ -222,9 +233,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "source files"
 
-[File 0019]
+[File 0020]
 File Type = "Include"
-Res Id = 19
+Res Id = 20
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "Yao_Reader.h"
@@ -233,9 +244,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0020]
+[File 0021]
 File Type = "User Interface Resource"
-Res Id = 20
+Res Id = 21
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "Yao_Reader.uir"
