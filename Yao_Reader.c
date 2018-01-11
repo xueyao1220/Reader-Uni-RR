@@ -107,42 +107,7 @@ int CVICALLBACK QuitCallback (int panel, int control, int event,
 	return 0;
 }
 
-int CVICALLBACK OnCloseComPortPressed (int panel, int control, int event,
-									   void *callbackData, int eventData1, int eventData2)
-{
-	int iCloseComPortError =0;
-	
-	switch (event)
-	{
-		case EVENT_COMMIT:
-			
-			
 
-			break;
-	}
-	return 0;
-}
-
-int CVICALLBACK OnOpenComPortPressed (int panel, int control, int event,
-									  void *callbackData, int eventData1, int eventData2)
-{
-
-	
-	switch (event)
-	{
-		case EVENT_COMMIT:
-			
-			Main_vInit(); 
-			
-			
-			Fv900x_srInitCom();
-			
-			
-
-			break;
-	}
-	return 0;
-}
 
 int CVICALLBACK AskIDPressed (int panel, int control, int event,
 							  void *callbackData, int eventData1, int eventData2)
@@ -159,6 +124,8 @@ int CVICALLBACK AskIDPressed (int panel, int control, int event,
 	{
 		case EVENT_COMMIT:
 			
+			   
+			
 		 	
 			ulAsic =Abl_srGetAsicIdFromTag();
 			
@@ -169,7 +136,11 @@ int CVICALLBACK AskIDPressed (int panel, int control, int event,
 			
 			SetCtrlVal(PANEL,PANEL_sAsicID,szAsicID); 
 			
-			SetCtrlVal(PANEL,PANEL_sSerialNr,szSerialNr); 
+			SetCtrlVal(PANEL,PANEL_sSerialNr,szSerialNr);
+			
+			 
+		 
+			
 
 			break;
 	}
@@ -177,3 +148,23 @@ int CVICALLBACK AskIDPressed (int panel, int control, int event,
 }
 
 
+
+int CVICALLBACK StartCallback (int panel, int control, int event,
+		void *callbackData, int eventData1, int eventData2)
+{
+	switch (event)
+	{
+		case EVENT_COMMIT:
+			
+			SetCtrlAttribute(PANEL,PANEL_STARTBUTTON,ATTR_DIMMED,1); 
+		
+			
+			Main_vInit(); 
+			
+			
+			Fv900x_srInitCom();
+
+			break;
+	}
+	return 0;
+}

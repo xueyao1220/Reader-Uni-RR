@@ -50,12 +50,12 @@ Force Rebuild = False
 [File 0001]
 Path = "/c/Users/yxue/Documents/Reader-Uni-RR/Yao_Reader.h"
 File Type = "Include"
-Disk Date = 3598425398
+Disk Date = 3598509240
 In Projects = "1,"
 Window Top = 92
 Window Left = 42
-Window Z-Order = 9
-Source Window State = "1,0,0,0,0,0,0,0,0,80,0,0,0,0,0,25,0,0,0,0,349,683,1,0,"
+Window Z-Order = 4
+Source Window State = "1,23,23,23,9,21,21,0,3,80,0,0,0,0,0,25,0,0,23,9,349,683,1,0,"
 
 [File 0002]
 Path = "/c/Users/yxue/Documents/Reader-Uni-RR/Ablauf.h"
@@ -84,8 +84,8 @@ Disk Date = 3598425366
 In Projects = "1,"
 Window Top = 272
 Window Left = 138
-Window Z-Order = 4
-Source Window State = "1,552,552,552,23,28,28,0,0,86,0,202,0,0,0,25,571,0,556,9,349,731,1,0,"
+Window Z-Order = 5
+Source Window State = "1,216,216,216,70,75,75,0,0,86,0,202,0,0,0,25,214,0,226,42,349,731,1,0,"
 
 [File 0005]
 Path = "/c/Users/yxue/Documents/Reader-Uni-RR/ini.c"
@@ -94,23 +94,23 @@ Disk Date = 3595590543
 In Projects = "1,"
 Window Top = 32
 Window Left = 10
-Window Z-Order = 5
+Window Z-Order = 7
 Source Window State = "1,52,52,52,7,12,12,0,0,86,0,0,0,0,0,25,248,0,260,0,349,731,1,0,"
 
 [File 0006]
 Path = "/c/Users/yxue/Documents/Reader-Uni-RR/Ablauf.c"
 File Type = "CSource"
-Disk Date = 3598434660
+Disk Date = 3598443487
 In Projects = "1,"
 Window Top = 212
 Window Left = 106
 Window Z-Order = 2
-Source Window State = "1,162,162,162,6,20,20,0,0,80,0,129,0,0,0,25,154,0,175,59,349,683,1,11,"
+Source Window State = "1,113,113,113,9,28,28,0,0,80,0,129,0,0,0,25,69,0,81,41,349,683,1,11,"
 
 [File 0007]
 Path = "/c/Users/yxue/Documents/Reader-Uni-RR/Yao_Reader.uir"
 File Type = "User Interface Resource"
-Disk Date = 3598425398
+Disk Date = 3598511240
 In Projects = "1,"
 Window Top = 62
 Window Left = 26
@@ -121,41 +121,14 @@ Window Z-Order = 3
 [File 0008]
 Path = "/c/Users/yxue/Documents/Reader-Uni-RR/Yao_Reader.c"
 File Type = "CSource"
-Disk Date = 3598434985
+Disk Date = 3598511192
 In Projects = "1,"
 Window Top = 32
 Window Left = 10
 Window Z-Order = 1
-Source Window State = "1,171,171,171,45,55,55,0,0,204,0,18,0,0,0,34,95,0,112,8,349,683,1,34,"
+Source Window State = "1,158,158,158,12,71,71,0,0,204,0,18,0,0,0,34,137,0,168,42,349,683,1,34,"
 
 [File 0009]
-Path = "/c/Users/yxue/Documents/Reader-Uni-RR/DebugPrintf.h"
-File Type = "Include"
-Disk Date = 3595585852
-In Projects = "1,"
-Window Top = 122
-Window Left = 58
-Source Window State = "1,65,66,66,61,61,61,0,3,0,0,0,0,0,0,0,32,0,65,61,349,731,1,0,"
-
-[File 0010]
-Path = "/c/Users/yxue/Documents/Reader-Uni-RR/feotypes.h"
-File Type = "Include"
-Disk Date = 3595584750
-In Projects = "1,"
-Window Top = 392
-Window Left = 202
-Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,203,53,349,731,1,0,"
-
-[File 0011]
-Path = "/c/Users/yxue/Documents/Reader-Uni-RR/Include File.h"
-File Type = "Include"
-Disk Date = 3595585529
-In Projects = "1,"
-Window Top = 62
-Window Left = 26
-Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,22,349,731,1,0,"
-
-[File 0012]
 Path = "/c/Users/yxue/Documents/Reader-Uni-RR/ini.h"
 File Type = "Include"
 Disk Date = 3595829032
@@ -165,35 +138,62 @@ Window Left = 26
 Window Z-Order = 10
 Source Window State = "1,40,40,40,8,21,21,0,0,86,0,30,0,0,0,25,0,0,40,39,349,731,1,0,"
 
-[File 0013]
+[File 0010]
 Path = "/c/Users/yxue/Documents/Reader-Uni-RR/IniItems.h"
 File Type = "Include"
 Disk Date = 3595590192
 In Projects = "1,"
 Window Top = 92
 Window Left = 42
-Window Z-Order = 8
+Window Z-Order = 9
 Source Window State = "1,84,84,84,46,54,54,0,0,86,0,0,0,0,0,25,128,0,27,52,349,731,1,0,"
 
-[File 0014]
+[File 0011]
 Path = "/c/Users/yxue/Documents/Reader-Uni-RR/main.c"
 File Type = "CSource"
 Disk Date = 3598433855
 In Projects = "1,"
 Window Top = 182
 Window Left = 90
-Window Z-Order = 7
-Source Window State = "1,48,48,48,6,25,25,0,0,86,0,0,0,0,0,25,27,0,48,40,349,731,1,0,"
+Window Z-Order = 6
+Source Window State = "1,48,48,48,6,25,25,0,0,86,0,0,0,0,0,25,27,0,49,0,349,731,1,0,"
 
-[File 0015]
+[File 0012]
 Path = "/c/Users/yxue/Documents/Reader-Uni-RR/main.h"
 File Type = "Include"
 Disk Date = 3598434091
 In Projects = "1,"
 Window Top = 122
 Window Left = 58
-Window Z-Order = 6
+Window Z-Order = 8
 Source Window State = "1,48,48,48,0,31,31,0,0,80,0,32,0,0,0,25,32,0,48,0,349,683,1,0,"
+
+[File 0013]
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/DebugPrintf.h"
+File Type = "Include"
+Disk Date = 3595585852
+In Projects = "1,"
+Window Top = 122
+Window Left = 58
+Source Window State = "1,65,66,66,61,61,61,0,3,0,0,0,0,0,0,0,32,0,65,61,349,731,1,0,"
+
+[File 0014]
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/feotypes.h"
+File Type = "Include"
+Disk Date = 3595584750
+In Projects = "1,"
+Window Top = 392
+Window Left = 202
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,203,53,349,731,1,0,"
+
+[File 0015]
+Path = "/c/Users/yxue/Documents/Reader-Uni-RR/Include File.h"
+File Type = "Include"
+Disk Date = 3595585529
+In Projects = "1,"
+Window Top = 62
+Window Left = 26
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,22,349,731,1,0,"
 
 [File 0016]
 Path = "/c/Users/yxue/Documents/Reader-Uni-RR/mystring.c"

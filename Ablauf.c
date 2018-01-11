@@ -78,8 +78,6 @@ static struct
 
 
 
-
-
 sregt Abl_srGetAsicIdFromTag(void)
 {
    sregt srRetVal = OK;
@@ -105,7 +103,7 @@ sregt Abl_srGetAsicIdFromTag(void)
    memset(iEEPromBuf, -1, 32*2);
    for(uiRetry = 0; uiRetry < 3; uiRetry++)
    {
-      // while retval == OK
+      // while retval == OK	   this section costs 10 seconds
       while(sAblS.srRetVal == OK)
       {
          // add recMsg to AnserStr
