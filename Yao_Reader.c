@@ -22,6 +22,7 @@
 #include "fv900x.h" 
 #include "Ablauf.h"  
 #include "main.h" 
+#include "Gui.h"
 
 //==============================================================================
 // Constants
